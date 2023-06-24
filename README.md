@@ -8,23 +8,23 @@
 
 > Stage 1
 
-![Directory Structure](https://github.com/03prashantpk/listedAssignment/blob/master/public/screenshot1.JPG)
+![Screenshots](https://github.com/03prashantpk/pepTest/blob/main/src/assets/ScreenShots/stage1.png)
 
 > Stage 2
 
-![Directory Structure](https://github.com/03prashantpk/listedAssignment/blob/master/public/screenshot1.JPG)
+![Screenshots](https://github.com/03prashantpk/pepTest/blob/main/src/assets/ScreenShots/stage2.png)
 
 > Stage 3
 
-![Directory Structure](https://github.com/03prashantpk/listedAssignment/blob/master/public/screenshot1.JPG)
+![Screenshots](https://github.com/03prashantpk/pepTest/blob/main/src/assets/ScreenShots/stage3.png)
 
 > Stage 4
 
-![Directory Structure](https://github.com/03prashantpk/listedAssignment/blob/master/public/screenshot1.JPG)
+![Screenshots](https://github.com/03prashantpk/pepTest/blob/main/src/assets/ScreenShots/stage4.png)
 
 > Stage 5
 
-![Directory Structure](https://github.com/03prashantpk/listedAssignment/blob/master/public/screenshot1.JPG)
+![Screenshots](https://github.com/03prashantpk/pepTest/blob/main/src/assets/ScreenShots/stage5.png)
 
 ## To install and run this React project, follow the steps below:
 - 
