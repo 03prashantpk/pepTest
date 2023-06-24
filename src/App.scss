@@ -113,6 +113,10 @@
               width: 20px;
               height: 20px;
               border-radius: 50%;
+              &:hover:nth-child(#{$i}) {
+                background-color: $color;
+                cursor: pointer;
+              }
             }
           }
         }

@@ -28,7 +28,7 @@ const productData = [
   },
   {
     id: 2,
-    name: 'Black Casual T-Shirt',
+    name: 'Red Beautiful Full Length Dress',
     price: '$9.99',
     original_price : "$10.99",
     offer: '10',
@@ -36,7 +36,7 @@ const productData = [
   },
   {
     id: 3,
-    name: 'Blue Denim Jeans',
+    name: 'Butterfly Yellow Dress',
     price: '$19.99',
     original_price : "$24.99",
     offer: '38',
@@ -44,7 +44,7 @@ const productData = [
   },
   {
     id: 4,
-    name: 'Red Striped Sweater',
+    name: 'Party Wear Colorful',
     price: '$14.99',
     original_price : "$20.99",
     offer: '26',
@@ -107,7 +107,7 @@ function App() {
             </div>
 
             <div className="rating-buy">
-              <p>4B</p>
+              <p><i class="fal fa-star"></i> 4B</p>
               <p>Buy +</p>
             </div>
           </div>

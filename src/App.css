@@ -101,6 +101,10 @@
   height: 20px;
   border-radius: 50%;
 }
+.card-outer .card .card-inner .card-color-size .color button:nth-child(1):hover:nth-child(1) {
+  background-color: purple;
+  cursor: pointer;
+}
 .card-outer .card .card-inner .card-color-size .color button:nth-child(2) {
   background-color: #fff;
   border: 2px solid #c10404;
@@ -108,12 +112,20 @@
   height: 20px;
   border-radius: 50%;
 }
+.card-outer .card .card-inner .card-color-size .color button:nth-child(2):hover:nth-child(2) {
+  background-color: #c10404;
+  cursor: pointer;
+}
 .card-outer .card .card-inner .card-color-size .color button:nth-child(3) {
   background-color: #fff;
   border: 2px solid lightblue;
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+.card-outer .card .card-inner .card-color-size .color button:nth-child(3):hover:nth-child(3) {
+  background-color: lightblue;
+  cursor: pointer;
 }
 .card-outer .card .card-inner .card-color-size .size {
   margin: 0 4px;
