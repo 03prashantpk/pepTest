@@ -1,0 +1,154 @@
+.card-outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 4%;
+  gap: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-outer .card {
+  width: 20%;
+  margin: 10px;
+  background-color: #fff;
+}
+.card-outer .card .card-inner {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 22px;
+}
+.card-outer .card .card-inner .card-head {
+  height: 300px;
+  border-radius: 22px;
+  position: relative;
+}
+.card-outer .card .card-inner .card-head img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 22px;
+}
+.card-outer .card .card-inner .card-head p {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #242424;
+}
+.card-outer .card .card-inner .card-name-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+.card-outer .card .card-inner .card-name-price h3 {
+  width: 60%;
+  word-break: break-word;
+}
+.card-outer .card .card-inner .card-name-price p {
+  width: 18%;
+  color: #c10404;
+  font-weight: 600;
+  font-size: 18px;
+}
+.card-outer .card .card-inner .card-color-size {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+.card-outer .card .card-inner .card-color-size .color {
+  margin: 0 2px;
+  display: flex;
+  gap: 4px;
+}
+.card-outer .card .card-inner .card-color-size .color button:nth-child(1) {
+  background-color: #fff;
+  border: 2px solid purple;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.card-outer .card .card-inner .card-color-size .color button:nth-child(2) {
+  background-color: #fff;
+  border: 2px solid #c10404;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.card-outer .card .card-inner .card-color-size .color button:nth-child(3) {
+  background-color: #fff;
+  border: 2px solid lightblue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.card-outer .card .card-inner .card-color-size .size {
+  margin: 0 4px;
+  display: flex;
+  gap: 4px;
+}
+.card-outer .card .card-inner .card-color-size .size button {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px #242424 solid;
+}
+.card-outer .card .card-inner .rating-buy {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 14px;
+}
+.card-outer .card .card-inner .rating-buy p:nth-child(1) {
+  color: #242424;
+}
+.card-outer .card .card-inner .rating-buy p:nth-child(2) {
+  color: purple;
+  font-weight: 600;
+}
+.card-outer .card .card-footer {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  margin: 8% 0%;
+  line-height: 15px;
+}
+.card-outer .card .card-footer .coupon {
+  text-align: center;
+  width: 60%;
+}
+.card-outer .card .card-footer .coupon p:nth-child(1) {
+  color: #303030;
+  text-transform: capitalize;
+}
+.card-outer .card .card-footer .coupon p:nth-child(2) {
+  color: #c10404;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-outer .card .card-footer .offer {
+  width: 40%;
+  text-align: center;
+  background-color: #92024c;
+  border-radius: 0px 22px 22px 0px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #fff;
+  line-height: 6px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}/*# sourceMappingURL=App.css.map */

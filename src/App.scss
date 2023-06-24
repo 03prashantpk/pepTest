@@ -1,0 +1,154 @@
+.card-outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 4%;
+  gap: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  .card {
+    width: 20%;
+    margin: 10px;
+    background-color: #fff;
+    
+    .card-inner {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 22px;
+      .card-head {
+        height: 300px;
+        border-radius: 22px;
+        position: relative;
+        img{
+          height: 300px;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 22px;
+        }
+        p{
+          position: absolute;
+          top: 1%;
+          right: 2%;
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          color: #242424;
+        }
+      }
+
+      .card-name-price {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 8px;
+        h3 {
+          width: 60%;
+          word-break: break-word;
+        }
+        p {
+          width: 18%;
+          color: #c10404;
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+      .card-color-size {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+
+        .color {
+          margin: 0 2px;
+          display: flex;
+          gap: 4px;
+          @for $i from 1 through 3 {
+            $color: null;
+
+            @if $i == 1 {
+              $color: purple;
+            } @else if $i == 2 {
+              $color: #c10404;
+            } @else if $i == 3 {
+              $color: lightblue;
+            }
+
+            button:nth-child(#{$i}) {
+              background-color: #fff;
+              border: 2px solid $color;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+          }
+        }
+        .size {
+          margin: 0 4px;
+          display: flex;
+          gap: 4px;
+          button {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 1px #242424 solid;
+          }
+        }
+      }
+      .rating-buy {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 14px;
+        p:nth-child(1) {
+          color: #242424;
+        }
+        p:nth-child(2) {
+          color: purple;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .card-footer{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-between;
+      margin: 8% 0%;
+      line-height: 15px;
+      .coupon{
+        text-align: center;
+        width: 60%;
+        p:nth-child(1){
+          color: #303030;
+          text-transform: capitalize;
+        }
+        p:nth-child(2){
+          color: #c10404;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+      .offer{
+        width: 40%;
+        text-align: center;
+        background-color: #92024c;
+        border-radius: 0px 22px 22px 0px;
+        font-weight: 600;
+        font-size: 22px;
+        color: #fff;
+        line-height: 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
