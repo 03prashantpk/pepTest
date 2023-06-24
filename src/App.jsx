@@ -107,7 +107,7 @@ function App() {
             </div>
           </div>
         ))}
-        <p className='credit'>Adjust background Blur: <input type="range" min={-1} max={8} value={bgBlurLevel} onChange={blurBgHandler} /> {bgBlurLevel}</p>
+        <p className='credit'>Adjust background Blur: <input type="range" min={-1} max={8} value={bgBlurLevel} onChange={blurBgHandler} /> {bgBlurLevel === -1 ? "off" : bgBlurLevel}</p>
         <p className='credit'>LinkedIn: <a target='_blank' href="https://www.linkedin.com/in/03prashantpk">03prashantpk</a></p>
         <p className='credit'>Other Projects: <a target='_blank' href="https://enally.in/projects">Projects Lists</a></p>
         <p className='credit'>Website: <a target='_blank' href="https://enally.in/">Enally.in</a></p>
