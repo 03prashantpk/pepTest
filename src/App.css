@@ -1,3 +1,30 @@
+body {
+  background-color: #d8f8ef;
+  background-size: cover;
+  background-position: top;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  animation: scrollup 12s infinite ease-in-out;
+}
+body h1 {
+  text-align: center;
+  color: purple;
+}
+
+@keyframes scrollup {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: center;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
 .card-outer {
   display: flex;
   flex-wrap: wrap;
@@ -9,10 +36,10 @@
 .card-outer .card {
   width: 20%;
   margin: 10px;
-  background-color: #fff;
 }
 .card-outer .card .card-inner {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
   border-radius: 22px;
 }
 .card-outer .card .card-inner .card-head {
@@ -29,6 +56,7 @@
   -o-object-position: center;
      object-position: center;
   border-radius: 22px;
+  animation: swipeUp 0.6s ease-in-out;
 }
 .card-outer .card .card-inner .card-head img:hover {
   cursor: pointer;
@@ -48,12 +76,27 @@
   transition: transform 0.3s;
 }
 .card-outer .card .card-inner .card-head:hover img:nth-child(2) {
-  transform: rotate(10deg) translateX(40px);
+  transform: rotate(10deg) translateX(22px);
 }
 .card-outer .card .card-inner .card-head:hover img:nth-child(3) {
-  transform: rotate(-10deg) translateX(-40px);
+  transform: rotate(-10deg) translateX(-22px);
 }
-.card-outer .card .card-inner .card-head p {
+.card-outer .card .card-inner .card-head:hover .offerOff {
+  display: none;
+  animation: popIn 0.6s ease-in-out;
+}
+.card-outer .card .card-inner .card-head .offerOff {
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  background-color: #c10404;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 16px;
+  border-radius: 4px;
+  animation: slideRight 0.6s forwards;
+}
+.card-outer .card .card-inner .card-head .like {
   position: absolute;
   top: 1%;
   right: 2%;
@@ -65,6 +108,12 @@
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #242424;
+  animation: slideLeft 0.6s forwards;
+}
+.card-outer .card .card-inner .card-head .like:hover {
+  background-color: #c10404;
+  color: #fff;
+  cursor: pointer;
 }
 .card-outer .card .card-inner .card-name-price {
   display: flex;
@@ -76,13 +125,14 @@
   word-break: break-word;
 }
 .card-outer .card .card-inner .card-name-price p {
-  width: 18%;
+  width: 20%;
   color: #c10404;
   font-weight: 600;
   font-size: 18px;
 }
 .card-outer .card .card-inner .card-name-price p small {
   color: #848484;
+  font-size: 14px;
 }
 .card-outer .card .card-inner .card-color-size {
   display: flex;
@@ -100,6 +150,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  animation: popIn 0.9s ease-in-out;
 }
 .card-outer .card .card-inner .card-color-size .color button:nth-child(1):hover:nth-child(1) {
   background-color: purple;
@@ -111,6 +162,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  animation: popIn 0.9s ease-in-out;
 }
 .card-outer .card .card-inner .card-color-size .color button:nth-child(2):hover:nth-child(2) {
   background-color: #c10404;
@@ -122,6 +174,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  animation: popIn 0.9s ease-in-out;
 }
 .card-outer .card .card-inner .card-color-size .color button:nth-child(3):hover:nth-child(3) {
   background-color: lightblue;
@@ -141,6 +194,13 @@
   width: 20px;
   height: 20px;
   border: 1px #242424 solid;
+  animation: popIn 0.9s ease-in-out;
+}
+.card-outer .card .card-inner .card-color-size .size button:hover {
+  background-color: #242424;
+  color: #fff;
+  transition-duration: 0.6s;
+  cursor: pointer;
 }
 .card-outer .card .card-inner .rating-buy {
   display: flex;
@@ -161,6 +221,8 @@
   justify-content: space-between;
   margin: 8% 0%;
   line-height: 15px;
+  animation: bounce 0.6s forwards;
+  background-color: #fff;
 }
 .card-outer .card .card-footer .coupon {
   text-align: center;
@@ -175,7 +237,7 @@
   transition-duration: 0.6s ease-in-out;
 }
 .card-outer .card .card-footer .coupon:hover p:nth-child(1) {
-  color: #fff;
+  color: #d8f8ef;
 }
 .card-outer .card .card-footer .coupon:hover p:nth-child(2) {
   color: yellow;
@@ -183,7 +245,7 @@
   text-transform: uppercase;
 }
 .card-outer .card .card-footer .coupon p:nth-child(1) {
-  color: #303030;
+  color: #242424;
   text-transform: capitalize;
 }
 .card-outer .card .card-footer .coupon p:nth-child(2) {
@@ -202,8 +264,72 @@
   line-height: 6px;
 }
 
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
+.credit {
+  background-color: #92024c;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+.credit a {
+  text-decoration: none;
+  color: yellow;
+}
+
+@keyframes swipeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }/*# sourceMappingURL=App.css.map */

@@ -1,3 +1,38 @@
+$background-color: #d8f8ef;
+$primary-color: #c10404;
+$secondary-color: purple;
+$accent-color: lightblue;
+$text-color: #242424;
+$offer-bg-color: #92024c;
+$offer-text-color: #fff;
+
+body {
+  background-color: $background-color;
+  background-size: cover;
+  background-position: top;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  animation: scrollup 12s infinite ease-in-out;
+  h1{
+    text-align: center;
+    color: $secondary-color;
+  }
+}
+
+@keyframes scrollup {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: center;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
 .card-outer {
   display: flex;
   flex-wrap: wrap;
@@ -5,14 +40,16 @@
   padding: 0 4%;
   gap: 2%;
   font-family: Arial, Helvetica, sans-serif;
+
   .card {
     width: 20%;
     margin: 10px;
-    background-color: #fff;
 
     .card-inner {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: #fff;
       border-radius: 22px;
+
       .card-head {
         height: 300px;
         border-radius: 22px;
@@ -25,6 +62,8 @@
           object-fit: cover;
           object-position: center;
           border-radius: 22px;
+          animation: swipeUp 0.6s ease-in-out;
+
           &:hover {
             cursor: pointer;
           }
@@ -47,14 +86,31 @@
         }
 
         &:hover img:nth-child(2) {
-          transform: rotate(10deg) translateX(40px);
+          transform: rotate(10deg) translateX(22px);
         }
 
         &:hover img:nth-child(3) {
-          transform: rotate(-10deg) translateX(-40px);
+          transform: rotate(-10deg) translateX(-22px);
         }
 
-        p {
+        &:hover .offerOff {
+          display: none;
+          animation: popIn 0.6s ease-in-out;
+        }
+
+        .offerOff {
+          position: absolute;
+          top: 1%;
+          left: 2%;
+          background-color: $primary-color;
+          color: $offer-text-color;
+          padding: 2px 6px;
+          font-size: 16px;
+          border-radius: 4px;
+          animation: slideRight 0.6s forwards;
+        }
+
+        .like {
           position: absolute;
           top: 1%;
           right: 2%;
@@ -65,7 +121,14 @@
           justify-content: center;
           align-items: center;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          color: #242424;
+          color: $text-color;
+          animation: slideLeft 0.6s forwards;
+
+          &:hover {
+            background-color: $primary-color;
+            color: $offer-text-color;
+            cursor: pointer;
+          }
         }
       }
 
@@ -73,20 +136,25 @@
         display: flex;
         justify-content: space-between;
         padding: 4px 8px;
+
         h3 {
           width: 60%;
           word-break: break-word;
         }
+
         p {
-          width: 18%;
-          color: #c10404;
+          width: 20%;
+          color: $primary-color;
           font-weight: 600;
           font-size: 18px;
+
           small {
             color: #848484;
+            font-size: 14px;
           }
         }
       }
+
       .card-color-size {
         display: flex;
         justify-content: space-between;
@@ -96,15 +164,16 @@
           margin: 0 2px;
           display: flex;
           gap: 4px;
+
           @for $i from 1 through 3 {
             $color: null;
 
             @if $i == 1 {
-              $color: purple;
+              $color: $secondary-color;
             } @else if $i == 2 {
-              $color: #c10404;
+              $color: $primary-color;
             } @else if $i == 3 {
-              $color: lightblue;
+              $color: $accent-color;
             }
 
             button:nth-child(#{$i}) {
@@ -113,6 +182,8 @@
               width: 20px;
               height: 20px;
               border-radius: 50%;
+              animation: popIn 0.9s ease-in-out;
+
               &:hover:nth-child(#{$i}) {
                 background-color: $color;
                 cursor: pointer;
@@ -120,10 +191,12 @@
             }
           }
         }
+
         .size {
           margin: 0 4px;
           display: flex;
           gap: 4px;
+
           button {
             background-color: #fff;
             display: flex;
@@ -132,19 +205,29 @@
             border-radius: 50%;
             width: 20px;
             height: 20px;
-            border: 1px #242424 solid;
+            border: 1px $text-color solid;
+            animation: popIn 0.9s ease-in-out;
+            &:hover {
+              background-color: $text-color;
+              color: $offer-text-color;
+              transition-duration: 0.6s;
+              cursor: pointer;
+            }
           }
         }
       }
+
       .rating-buy {
         display: flex;
         justify-content: space-between;
         padding: 0px 14px;
+
         p:nth-child(1) {
-          color: #242424;
+          color: $text-color;
         }
+
         p:nth-child(2) {
-          color: purple;
+          color: $secondary-color;
           font-weight: 600;
         }
       }
@@ -157,6 +240,9 @@
       justify-content: space-between;
       margin: 8% 0%;
       line-height: 15px;
+      animation: bounce 0.6s forwards;
+      background-color: #fff;
+
       .coupon {
         text-align: center;
         width: 60%;
@@ -164,14 +250,15 @@
         cursor: pointer;
 
         &:hover {
-          background-color: #92024c;
-          color: #fff;
+          background-color: $offer-bg-color;
+          color: $offer-text-color;
           border-radius: 22px 0px 0px 22px;
           transition-duration: 0.6s ease-in-out;
 
           p:nth-child(1) {
-            color: #fff;
+            color: $background-color;
           }
+
           p:nth-child(2) {
             color: yellow;
             font-weight: 600;
@@ -180,31 +267,107 @@
         }
 
         p:nth-child(1) {
-          color: #303030;
+          color: $text-color;
           text-transform: capitalize;
         }
+
         p:nth-child(2) {
-          color: #c10404;
+          color: $primary-color;
           font-weight: 600;
           text-transform: uppercase;
         }
       }
+
       .offer {
         width: 40%;
         text-align: center;
-        background-color: #92024c;
+        background-color: $offer-bg-color;
         border-radius: 0px 22px 22px 0px;
         font-weight: 600;
         font-size: 22px;
-        color: #fff;
+        color: $offer-text-color;
         line-height: 6px;
       }
     }
   }
 }
+.credit {
+  background-color: $offer-bg-color;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  a {
+    text-decoration: none;
+    color: yellow;
+  }
+}
 
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
+@keyframes swipeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

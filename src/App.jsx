@@ -22,7 +22,7 @@ const productData = [
     id: 1,
     name: 'White Traditional Long Dress',
     price: '$3.99',
-    original_price : "$4.99",
+    original_price: "$4.99",
     offer: '20',
     images: [product1_1, product1_2, product1_3],
   },
@@ -30,7 +30,7 @@ const productData = [
     id: 2,
     name: 'Red Beautiful Full Length Dress',
     price: '$9.99',
-    original_price : "$10.99",
+    original_price: "$10.99",
     offer: '10',
     images: [product2_1, product2_2, product2_3],
   },
@@ -38,7 +38,7 @@ const productData = [
     id: 3,
     name: 'Butterfly Yellow Dress',
     price: '$19.99',
-    original_price : "$24.99",
+    original_price: "$24.99",
     offer: '38',
     images: [product3_1, product3_2, product3_3],
   },
@@ -46,7 +46,7 @@ const productData = [
     id: 4,
     name: 'Party Wear Colorful',
     price: '$14.99',
-    original_price : "$20.99",
+    original_price: "$20.99",
     offer: '26',
     images: [product4_1, product4_2, product4_3],
   },
@@ -72,60 +72,89 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  const chnageBackgroundImagehandler = (e) => {
+    // console.log(e.target.src)
+    document.body.style.backgroundImage = `url(${e.target.src})`;
+  }
+
+  const resetbackgroundImageHandler = () => {
+    document.body.style.backgroundImage = `url("")`;
+  }
+  const [bgBlurLevel, setBgblur] = useState(0)
+  const blurBgHandler = (e) => {
+    setBgblur(e.target.value)
+    document.body.style.backdropFilter = `blur(${e.target.value}px)`
+  }
+
   return (
-    <div className="card-outer">
-      {shuffledProducts.map((product) => (
-        <div className="card" key={product.id}>
-          <div className="card-inner">
-            <div className="card-head">
-              {product.images.map((image, index) => (
-                <img key={index} src={image} alt={`product${index + 1}`} />
-              ))}
-              <p>
-                <i className="fal fa-heart"></i>
-              </p>
-            </div>
+    <>
+      <h1>Task + Practice</h1>
+      <div className="card-outer">
 
-            <div className="card-name-price">
-              <h3>{product.name}</h3>
-              <p>{product.price} <br /><small> <strike>{product.original_price}</strike> </small></p>
-              
-            </div>
-
-            <div className="card-color-size">
-              <div className="color">
-                <button></button>
-                <button></button>
-                <button></button>
+        {shuffledProducts.map((product) => (
+          <div className="card" key={product.id}>
+            <div className="card-inner">
+              <div className="card-head">
+                {product.images.map((image, index) => (
+                  <img key={index} src={image} alt={`product${index + 1}`}
+                    onMouseOver={chnageBackgroundImagehandler}
+                    onMouseOut={resetbackgroundImageHandler} />
+                ))}
+                <p className='offerOff'>-25%</p>
+                <p className='like'>
+                  <i className="fal fa-heart"></i>
+                </p>
               </div>
 
-              <div className="size">
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
+              <div className="card-name-price">
+                <h3>{product.name}</h3>
+                <p>{product.price} <br /><small> <strike>{product.original_price}</strike> </small></p>
+
+              </div>
+
+              <div className="card-color-size">
+                <div className="color">
+                  <button></button>
+                  <button></button>
+                  <button></button>
+                </div>
+
+                <div className="size">
+                  <button>S</button>
+                  <button>M</button>
+                  <button>L</button>
+                </div>
+              </div>
+
+              <div className="rating-buy">
+                <p><i class="fal fa-star"></i> 4B</p>
+                <p>Buy +</p>
               </div>
             </div>
 
-            <div className="rating-buy">
-              <p><i class="fal fa-star"></i> 4B</p>
-              <p>Buy +</p>
+            <div className="card-footer">
+              <div className="coupon">
+                <p>Monday Happy</p>
+                <p>Monmpy</p>
+              </div>
+
+              <div className="offer">
+                <p>{product.offer}%</p>
+                <p>Off</p>
+              </div>
             </div>
           </div>
+        ))}
+        <p className='credit'>Adjust background Blur: <input type="range" min={0} max={8} value={bgBlurLevel} onChange={blurBgHandler} /> {bgBlurLevel}</p>
+        <p className='credit'>LinkedIn: <a target='_blank' href="https://www.linkedin.com/in/03prashantpk">03prashantpk</a></p>
+        <p className='credit'>Other Projects: <a target='_blank' href="https://enally.in/projects">Projects Lists</a></p>
+        <p className='credit'>Website: <a target='_blank' href="https://enally.in/">Enally.in</a></p>
 
-          <div className="card-footer">
-            <div className="coupon">
-              <p>Monday Happy</p>
-              <p>Monmpy</p>
-            </div>
 
-            <div className="offer">
-              <p>{product.offer}%</p>
-              <p>Off</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+      </div>
+    </>
+
+
   );
 }
 
