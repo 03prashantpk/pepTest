@@ -19,6 +19,7 @@
   height: 300px;
   border-radius: 22px;
   position: relative;
+  transition-duration: 0.6s;
 }
 .card-outer .card .card-inner .card-head img {
   height: 300px;
@@ -28,6 +29,29 @@
   -o-object-position: center;
      object-position: center;
   border-radius: 22px;
+}
+.card-outer .card .card-inner .card-head img:hover {
+  cursor: pointer;
+}
+.card-outer .card .card-inner .card-head img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  transition: transform 0.3s;
+}
+.card-outer .card .card-inner .card-head img:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  transition: transform 0.3s;
+}
+.card-outer .card .card-inner .card-head:hover img:nth-child(2) {
+  transform: rotate(10deg) translateX(40px);
+}
+.card-outer .card .card-inner .card-head:hover img:nth-child(3) {
+  transform: rotate(-10deg) translateX(-40px);
 }
 .card-outer .card .card-inner .card-head p {
   position: absolute;

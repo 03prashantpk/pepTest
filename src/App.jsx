@@ -1,15 +1,24 @@
 import { useState } from 'react'
 import './App.css'
+import productimage1_1 from './assets/product1.1.webp';
+import productimage1_2 from './assets/product1.1.webp';
+import productimage1_3 from './assets/product1.1.webp';
 
 function App() {
+
+  const changeImageHandler = () =>{
+
+  }
 
   return (
     <div className='card-outer'>
 
-      <div className="card">
+      <div className="card" onMouseOver={changeImageHandler}>
         <div className="card-inner">
           <div className='card-head'>
-            <img src="https://cdn.shopify.com/s/files/1/0105/8881/5418/products/buydressesonlineindia-05554.jpg?v=1679388165" alt="product1" />
+            <img src={productimage1_2} alt="product1"  />
+            <img src={productimage1_3} alt="product1" />
+            <img src={productimage1_1} alt="product1" />
             <p><i class="fal fa-heart"></i></p>
           </div>
 
@@ -52,10 +61,12 @@ function App() {
 
       </div>
 
-      <div className="card">
+      <div className="card" onMouseOver={changeImageHandler}>
         <div className="card-inner">
-
           <div className='card-head'>
+            <img src={productimage1_2} alt="product1"  />
+            <img src={productimage1_3} alt="product1" />
+            <img src={productimage1_1} alt="product1" />
             <p><i class="fal fa-heart"></i></p>
           </div>
 
@@ -98,10 +109,13 @@ function App() {
 
       </div>
 
-      <div className="card">
-        <div className="card-inner">
 
+      <div className="card" onMouseOver={changeImageHandler}>
+        <div className="card-inner">
           <div className='card-head'>
+            <img src={productimage1_2} alt="product1"  />
+            <img src={productimage1_3} alt="product1" />
+            <img src={productimage1_1} alt="product1" />
             <p><i class="fal fa-heart"></i></p>
           </div>
 
@@ -144,11 +158,13 @@ function App() {
 
       </div>
 
-      <div className="card">
-        <div className="card-inner">
 
+      <div className="card" onMouseOver={changeImageHandler}>
+        <div className="card-inner">
           <div className='card-head'>
-            <img src="" alt="" />
+            <img src={productimage1_2} alt="product1"  />
+            <img src={productimage1_3} alt="product1" />
+            <img src={productimage1_1} alt="product1" />
             <p><i class="fal fa-heart"></i></p>
           </div>
 
@@ -191,7 +207,7 @@ function App() {
 
       </div>
 
-      
+
     </div>
   )
 }
