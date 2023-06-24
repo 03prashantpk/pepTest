@@ -81,6 +81,9 @@
   font-weight: 600;
   font-size: 18px;
 }
+.card-outer .card .card-inner .card-name-price p small {
+  color: #848484;
+}
 .card-outer .card .card-inner .card-color-size {
   display: flex;
   justify-content: space-between;
@@ -150,6 +153,22 @@
 .card-outer .card .card-footer .coupon {
   text-align: center;
   width: 60%;
+  transition-duration: 0.6s ease-in-out;
+  cursor: pointer;
+}
+.card-outer .card .card-footer .coupon:hover {
+  background-color: #92024c;
+  color: #fff;
+  border-radius: 22px 0px 0px 22px;
+  transition-duration: 0.6s ease-in-out;
+}
+.card-outer .card .card-footer .coupon:hover p:nth-child(1) {
+  color: #fff;
+}
+.card-outer .card .card-footer .coupon:hover p:nth-child(2) {
+  color: yellow;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .card-outer .card .card-footer .coupon p:nth-child(1) {
   color: #303030;
